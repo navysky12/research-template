@@ -1,0 +1,37 @@
+\documentclass[12pt]{report}
+
+\input{documents/snippets/preamble.tex}
+
+\addbibresource{references/ref.bib}
+
+\input{metadata.tex}
+\purpose{
+  Purpose of Report
+}
+
+\begin{document}
+
+% Front Matter
+\input{documents/00-titlePage.tex}
+\pagenumbering{roman}\setcounter{page}{1}
+\newpage\vspace*{75pt}
+\fmsection{
+  \input{documents/01-declaration.tex}
+}
+\newpage\vspace*{75pt}
+\fmsection{
+  \input{abstract.tex}
+}
+\tableofcontents
+\clearpage
+
+% Main Matter
+\pagenumbering{arabic}\setcounter{page}{1}
+\input{share.tex}
+\clearpage
+
+% Back Matter
+\pagenumbering{Roman}\setcounter{page}{1}
+\printbibliography[heading=bibintoc]{}
+
+\end{document}
